@@ -1,0 +1,13 @@
+version: "3"
+services:
+  nginx:
+    image: nginx-proxy:0.0.1
+    container_name: nginx
+    ports:
+      - 80:80
+    networks:
+      - nginx-network
+
+networks:
+    nginx-network:
+      driver: bridge

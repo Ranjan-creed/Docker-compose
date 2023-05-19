@@ -1,0 +1,20 @@
+version: "3"
+services:
+  postgresdb:
+    image: 'postgres:13.1-alpine'
+    container_name: postgresdb
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root-postgres
+    volumes:
+      - postgresdb:/var/lib/postgresql/data
+    networks:
+      - postgresdb-network
+
+volumes:
+  postgresdb:
+    driver: local
+
+networks:
+    postgresdb-network:
+      driver: bridge
