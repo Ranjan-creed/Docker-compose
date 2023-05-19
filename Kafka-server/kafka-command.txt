@@ -1,0 +1,15 @@
+//Docker  kafka command
+cd /opt/kafka
+
+./bin/kafka-topics.sh --create --topic USER-ACTIVITY --bootstrap-server localhost:9092
+./bin/kafka-topics.sh --describe --topic USER-ACTIVITY --bootstrap-server localhost:9092
+./bin/kafka-console-producer.sh --topic USER-ACTIVITY --bootstrap-server localhost:9092
+./bin/kafka-console-consumer.sh --topic USER-ACTIVITY --from-beginning --bootstrap-server localhost:9092
+
+
+//Docker Postgres command
+
+psql -U postgres
+\c billing
+select * from onboard_user;
+select * from history;
